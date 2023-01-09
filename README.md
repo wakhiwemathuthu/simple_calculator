@@ -1,6 +1,6 @@
 # simple_calculator
-
-A simple calculator project by Wakhiwe Mathuthu.
+<img src="https://github.com/wakhiwemathuthu/simple_calculator/blob/master/Screenshots/dark_theme.png?raw=true" height="500"></img>
+<img src="https://github.com/wakhiwemathuthu/simple_calculator/blob/master/Screenshots/light_theme.png?raw=true" height="500"></img>
 
 ## Getting Started
 
