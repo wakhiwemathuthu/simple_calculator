@@ -73,7 +73,7 @@ class MyHomePage extends StatelessWidget {
               itemBuilder: (contex, index) {
                 switch (index) {
 
-                /// CLEAR BTN
+                  /// CLEAR BTN
                   case 0:
                     return CustomButton(
                         buttonTapped: () {
@@ -87,7 +87,7 @@ class MyHomePage extends StatelessWidget {
                             : LightColors.leftOperatorColor,
                         text: buttons[index]);
 
-                /// DELETE BTN
+                  /// DELETE BTN
                   case 1:
                     return CustomButton(
                         buttonTapped: () {
@@ -101,7 +101,7 @@ class MyHomePage extends StatelessWidget {
                             : LightColors.leftOperatorColor,
                         text: buttons[index]);
 
-                /// EQUAL BTN
+                  /// EQUAL BTN
                   case 19:
                     return CustomButton(
                         buttonTapped: () {
@@ -126,8 +126,8 @@ class MyHomePage extends StatelessWidget {
                         textColor: isOperator(buttons[index])
                             ? LightColors.operatorColor
                             : themeController.isDark
-                            ? Colors.white
-                            : Colors.black,
+                                ? Colors.white
+                                : Colors.black,
                         text: buttons[index]);
                 }
               }),
@@ -138,79 +138,81 @@ class MyHomePage extends StatelessWidget {
       ThemeController themeController, CalculateController controller) {
     return Expanded(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              alignment: Alignment.topCenter,
-              width: 100,
-              height: 45,
-              decoration: BoxDecoration(
-                  color: themeController.isDark
-                      ? DarkColors.sheetBgColor
-                      : LightColors.sheetBgColor,
-                  borderRadius: BorderRadius.circular(20)),
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        themeController.lightTheme();
-                      },
-                      child: Icon(
-                        Icons.light_mode_outlined,
-                        color: themeController.isDark ? Colors.white : Colors.grey,
-                        size: 25,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        themeController.darkTheme();
-                      },
-                      child: Icon(
-                        Icons.dark_mode_outlined,
-                        color: themeController.isDark ? Colors.white : Colors.grey,
-                        size: 25,
-                      ),
-                    )
-                  ],
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          alignment: Alignment.topCenter,
+          width: 100,
+          height: 45,
+          decoration: BoxDecoration(
+              color: themeController.isDark
+                  ? DarkColors.sheetBgColor
+                  : LightColors.sheetBgColor,
+              borderRadius: BorderRadius.circular(20)),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    themeController.lightTheme();
+                  },
+                  child: Icon(
+                    Icons.light_mode_outlined,
+                    color: themeController.isDark ? Colors.white : Colors.grey,
+                    size: 25,
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    themeController.darkTheme();
+                  },
+                  child: Icon(
+                    Icons.dark_mode_outlined,
+                    color: themeController.isDark ? Colors.white : Colors.grey,
+                    size: 25,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 70),
+          child: Column(
+            children: [
+              Container(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  controller.userInput,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      color:
+                          themeController.isDark ? Colors.white : Colors.black,
+                      fontSize: 25),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20, top: 70),
-              child: Column(
-                children: [
-                  Container(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      controller.userInput,
-                      style: TextStyle(
-                          color:
-                          themeController.isDark ? Colors.white : Colors.black,
-                          fontSize: 25),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    alignment: Alignment.bottomRight,
-                    child: Text(controller.userOutput,
-                        style: TextStyle(
-                            color: themeController.isDark
-                                ? Colors.white
-                                : Colors.black,
-                            fontSize: 32)),
-                  ),
-                ],
+              const SizedBox(
+                height: 10,
               ),
-            ),
-          ],
-        ));
+              Container(
+                alignment: Alignment.bottomRight,
+                child: Text(controller.userOutput,
+                    style: TextStyle(
+                        color: themeController.isDark
+                            ? Colors.white
+                            : Colors.black,
+                        fontSize: 32)),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ));
   }
 
   bool isOperator(String y) {

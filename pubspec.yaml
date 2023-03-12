@@ -38,7 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   math_expressions: ^2.3.0
   get: ^4.6.5
-  flutter_svg: ^1.1.6
+  fluttertoast: ^8.2.1
+  shared_preferences: ^2.0.18
 
 dev_dependencies:
   flutter_test:
